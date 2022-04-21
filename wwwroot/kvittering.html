@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--- Lister ut kvittering etter kjøp --->
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="kvittering.css" />
+    <script src="js/KvitteringUt.js"></script>
+    <body onLoad="hentKvittering()">
+        <title>Båttur</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="Infotekst" style="text-align: center"></div>
+
+        <p>Nedenfor finner du informasjon om  ditt kjøp hos Hurtigruta.</p>
+
+        <div class="Kundeopplysninger" style="text-align: center">
+            <h5>Kundeinformasjon</h5>
+
+            <div id="Fornavn" style="text-align: center"></div>
+            <div id="Etternavn" style="text-align: center"></div>
+            <div id="Telefonut" style="text-align: center"></div>
+            <div id="Mailut" style="text-align: center"></div>
+
+            <h5>Praktisk informasjon om reisen</h5>
+
+            <div id="Fra" style="text-align: center"></div>
+
+            <div id="Til" style="text-align: center"></div>
+
+            <div id="Dato" style="text-align: center"></div>
+
+            <h5>Bestilte billettyper</h5>
+            <div id="voksen" style="text-align: center"></div>
+            <div id="barn" style="text-align: center"></div>
+            <div id="honør" style="text-align: center"></div>
+            <div id="student" style="text-align: center"></div>
+            <div id="price" style="text-align: center"></div>
+            <button onclick="hjem()" name="Knapp" id="Knapp" style="margin-top: 20px" ; class="btn btn-info">Bestill ny billett</button>
+        </div>
+    </div>
+</body>
+</html>

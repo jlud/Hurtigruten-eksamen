@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--- 2. bestillingsside. Inputs for personinformasjon --->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/kundeinfo.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>Personopplysning</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div>
+            <h2>Registrer Båtbilletter</h2>
+        </div>
+
+        <div>
+            <h3>Personopplysninger</h3>
+            <p>Personen som registrerer seg vil motta en kvittering med reiseinformasjon</p>
+        </div>
+
+        <div class="ml-6 mt-4 mr-6">
+            <form class="mt-4 mb-5" id="registreringskjema">
+
+                <div class="form-group row mt-6">
+
+                    <label class="col-form-label col-ml-6 col-sm-2" for="fornavn">Fornavn</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" placeholder="Skriv inn fornavn" id="fornavn" name="fornavn" onchange="validerFornavn(this.value)" />
+                        <div class="col-sm-15" style="color: red; font-size: 12px; font-style: italic;">
+                            <div id="feilmeldingFornavn"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-6">
+                    <label class="col-form-label col-ml-6 col-sm-2" for="etternavn">Etternavn</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" placeholder="Skriv inn etternavn" id="etternavn" onchange="validerEtternavn(this.value)" />
+                        <div class="col-sm-15" style="color: red; font-size: 12px; font-style: italic;">
+                            <div id="feilmeldingEtternavn"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-6">
+                    <label class="col-form-label col-ml-6 col-sm-2" for="telefonnr">Telefonnr</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" placeholder="Skriv inn telefonnr" id="telefonnr" onchange="validerTelefonnr(this.value)" />
+                        <div class="col-sm-15" style="color: red; font-size: 12px; font-style: italic;">
+                            <div id="feilmeldingTelefon"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row mt-6">
+                    <label class="col-form-label col-ml-6 col-sm-2" for="epost">Email</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" placeholder="Skriv inn email (Valgfritt)" id="innmail" />
+                        <div class="col-sm-15" style="color: red; font-size: 12px; font-style: italic;">
+                            <div id="feilmeldingEpost"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <button onclick="tilbake()" style="margin-top: 20px" ; class="btn btn-info">Tilbake</button>
+        <button onclick="TestLeggTilKunde()" style="margin-top: 20px" ; class="btn btn-success">Registrer</button>
+    </div>
+</body>
+</html>

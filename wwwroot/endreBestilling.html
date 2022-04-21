@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--- Hjemside for endre bestilling. --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Endre Bestilling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="js/EndreBestilling.js"></script>
+    <body onLoad="ListUtenSøk()">
+</head>
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="AdminHome.html" class="navbar-brand">Administrasjon : hjem</a>
+
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                   
+                    <li>
+                        <a href="endreKunder.html">Registrer og endre kunder</a>
+                    </li>
+                    <li>
+                        <a href="Endre_pris.html">Endre priser</a>
+                    </li>
+                    <li>
+                        <a href="endreBestilling.html">Endre bestillinger</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <button class="btn btn-dark" style=" margin-top:10px;" onclick="LoggUt()">
+                        Logg ut
+                    </button>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-top:50px;">
+        <h3>Søk etter bestillinger</h3>
+        <p style="font-style:italic">Nedenfor kan du søke etter telefonnummeret til kunden. Dersom kunden er registrert i systemet vil bestillingen listes ut.</p>
+        <div class="form-group row" style="margin-top: 20px;">
+            <div class="col-xs-4">
+                <label for="pris">Telefonnummer</label>
+                <input class="form-control" placeholder="F.eks 00000000 (eksisterende kunde)" id="TlfInn" type="text">
+            </div>
+        </div>
+        <button onclick="hentAlleBestillinger()" class="btn btn-dark" style="background-color: black; color: white;">Søk etter nummer</button>
+        <h3 id="KundeInfo"></h3>
+        <div id="alleBestillinger"></div>
+
+
+        <h3>Alle Bestillinger</h3>
+        <p style="font-style:italic">Nedenfor er alle bestilling listet ut. <br />Her kan du velge å endre eller slette en eller flere bestilling.</p>
+        <div id="utBestillingUtenSøk"></div>
+
+</body>
+</html>

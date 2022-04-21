@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--- Hjemside for endring av kunder --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Endre Kunder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <body onLoad="SideStart()">
+        <script src="js/endreKunder.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="AdminHome.html" class="navbar-brand">Administrasjon : hjem</a>
+
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="endreKunder.html">Registrer og endre kunder</a>
+                    </li>
+                    <li>
+                        <a href="Endre_pris.html">Endre priser</a>
+                    </li>
+                    <li>
+                        <a href="endreBestilling.html">Endre bestillinger</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <button class="btn btn-dark" style=" margin-top:10px;" onclick="LoggUt()">
+                        Logg ut
+                    </button>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+
+    <div class="container registrer kunde" style="margin-top:30px;">
+        <div class="col-md-8">
+
+            <h3>Registrer, endre og slette kunder</h3>
+            <p style="font-style:italic"> Nedenfor kan du registrere nye kunde. Lenger ned kan du endre informasjonen til en allerede eksisterende kunde.</p>
+            <div>
+                <br />
+                <h4>Registrer ny kunde</h4>
+
+                <div class="form-group row" style="margin-top:30px;">
+                    <label for="fornavn" class="col-sm-2 col-form-label">Fornavn</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="fornavnreg" onchange="validerFornavn.value">
+                        <span id="feilmeldingFornavn" style="color: red; font-size: 12px; font-style: italic;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="etternavn" class="col-sm-2 col-form-label">Etternavn</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="etternavnreg" onchange="validerEtternavn.value">
+                    <span id="feilmeldingEtternavn" style="color: red; font-size: 12px; font-style: italic;"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="telefonnr" class="col-sm-2 col-form-label">Telefonnr</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="tlfreg" onchange="validerTelefonnr.value">
+                    <span id="feilmeldingTlf" style="color: red; font-size: 12px; font-style: italic;"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="mail" class="col-sm-2 col-form-label">Mail</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="emailreg" onchange="validerEmail.value">
+                    <span id="feilmeldingEmail" style="color: red; font-size: 12px; font-style: italic;"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <button onclick="validerOgLagreKunde()" class="btn btn-dark" style="background-color: black; color: white; margin-top:20px;">Registrer ny kunde</button>
+
+                </div>
+                <div id="feil" style="color:red"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container endre kunde" style="margin-top:30px;">
+        <div class="col-md-6">
+            <h4>Endre Kunde</h4>
+            <p style="font-style:italic">Her kan du søke etter kundens telefonnummer. Om kunden finnes listes bestillingen ut.<br /></p>
+            <input class="form-control" type="text" id="TlfInn" placeholder="88888888">
+
+            <button onclick="HentKundeTlf()" class="btn btn-dark" style="background-color: black; color: white; margin-top:20px;">Søk etter nummer</button>
+            <br />
+
+            <div id="KundeListet">
+                <br />
+                <div id="status" style="color: red; font-size: 14px; font-style: italic;"></div>
+                <br />
+
+
+                <div id="idut"></div>
+
+                <div id="fornavnut"></div>
+
+                <div id="etternavnut"></div>
+
+                <div id="telefonut"></div>
+
+                <div id="emailut"></div>
+            </div>
+
+            <br />
+
+            <div id="inputz">
+                <p style="font-style:italic">Nedenfor kan du endre kundeinformasjonen.<br /></p>
+                <div class="form-group row">
+                    <label for="fornavn" class="col-sm-2 col-form-label">Fornavn</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="fornavninn">
+                    </div>
+                    <div id="fornavninnfeil" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label for="etternavn" class="col-sm-2 col-form-label">Etternavn</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="etternavninn">
+
+                    </div>
+                    <div id="etternavninnfeil" style="color: red; font-size: 14px; font-style: italic;"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefon" class="col-sm-2 col-form-label">Telefonnr</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="telefonnummerinn">
+
+
+                    </div>
+                    <div id="telefonnummerinnfeil" style="color: red; font-size: 14px; font-style: italic;"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="mail" class="col-sm-2 col-form-label">Mail</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="emailinn">
+
+                    </div>
+                    <div id="emailinnfeil" style="color: red; font-size: 14px; font-style: italic;"></div>
+                </div>
+                <button onclick="validerOgEndreKunde()" class="btn btn-dark" style="background-color: black; color: white; margin-top:20px;">Endre kunde</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container alle kunde" style="margin-top:20px;">
+        <div class="col-md-10">
+            <h4>Alle Kundene</h4>
+            <div id="listallekundene"></div>
+        </div>
+    </div>
+
+</body>
+</html>

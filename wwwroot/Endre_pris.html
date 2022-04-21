@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--- Endre Pris side --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="js/Endre_Pris.js"></script>
+    <meta charset="utf-8" />
+    <body onLoad="HentPris()">
+        <title>Endre billettpriser</title>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="AdminHome.html" class="navbar-brand">Administrasjon : hjem</a>
+
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="endreKunder.html">Registrer og endre kunder</a>
+                    </li>
+                    <li>
+                        <a href="Endre_pris.html">Endre priser</a>
+                    </li>
+                    <li>
+                        <a href="endreBestilling.html">Endre bestillinger</a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <button class="btn btn-dark" style=" margin-top:10px;" onclick="LoggUt()">
+                        Logg ut
+                    </button>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-top:50px;">
+        <h3>Endre billettpriser</h3>
+        <br>
+        <h4>Gjeldene billettpriser</h4>
+        <div id="Voksenpris" style="margin-top:20px;"></div>
+        <br />
+        <div id="Barnepris"></div>
+        <br />
+        <div id="Honorpris"></div>
+        <br />
+        <div id="Studentpris"></div>
+
+
+        <div class="form-group row" style="margin-top: 30px;">
+            <div class="col-xs-4">
+
+
+                <label for="billettype" style="margin-top:10px;">Velg billettypen som skal endres</label>
+                <select class="form-control" type="text" id="valgalternativ">
+                    <option value="1">Voksenbillett</option>
+                    <option value="2">Barnebillett</option>
+                    <option value="3">Honorbillett</option>
+                    <option value="4">Studentbillett</option>
+                </select>
+                <div id="FeilInput" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+            </div>
+
+            <div class="form-group row" style="margin-top:10px;">
+                <div class="col-xs-2">
+                    <label for="pris">Ny pris</label>
+                    <input placeholder="F.eks 199" class="form-control" id="prisInn" type="text">
+                </div>
+
+                <button onclick="EndrePris()" class="btn btn-dark" style="background-color: black; color: white; margin-top:24px;">Endre pris</button>
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

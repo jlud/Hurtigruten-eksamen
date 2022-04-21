@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--- Side for redigering av unik bestilling. Kommer hit hvis man trykker på endre på siden endreBestilling --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="js/RedigerBillett.js"></script>
+    <meta charset="utf-8" />
+    <body onLoad="SideStart()">
+        <title>Rediger Bestillinger</title>
+</head>
+
+<body>
+
+
+    <div class="navbar navbar-default navbar-fixed-top">
+
+
+
+        <div class="container">
+            <div class="navbar-header">
+                <a href="AdminHome.html" class="navbar-brand">Administrasjon : hjem</a>
+
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="endreKunder.html">Registrer og endre kunder</a>
+                    </li>
+                    <li>
+                        <a href="Endre_pris.html">Endre priser</a>
+                    </li>
+                    <li>
+                        <a href="endreBestilling.html">Endre bestillinger</a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <button class="btn btn-dark" style=" margin-top:10px;"  onclick="LoggUt()">
+                        Logg ut
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 60px;">
+        <div class="col-md-4" style="margin-top:20px;">
+            <h4>Fyll inn det ønskede antallet av hver billettypen du ønsker å endre.</h4>
+            <h5>Verdiene bestillingen har per nå, er listet i hvert input-felt</h5>
+
+
+            <label>Voksenbillett</label>
+            <input class="form-control" type="text" id="voksenInn">
+            <div id="VoksenErr" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+            <label>Barnebillett</label>
+            <input class="form-control" type="text" id="barnInn">
+            <div id="BarnErr" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+            <label>Honørbillett</label>
+            <input class="form-control" type="text" id="honorInn">
+            <div id="HonorErr" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+            <label>Student</label>
+            <input class="form-control" type="text" id="studentInn">
+            <div id="StudentErr" style="color: red; font-size: 14px; font-style: italic;"></div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="container" style="margin-top:40px;">
+
+        <div id="Ingenturer"></div>
+        <div class="col-md-8">
+            <h5>Om du i tillegg ønsker å redigere ruten som er registrert, trykk på knappen under</h5>
+            <button onclick="SkalBytteRute()" class="btn btn-dark" style="background-color: black; color: white;" id="Bytteknapp">Inkluder ny rute</button>
+
+
+            <div id="Usynligdiv" style="display: block;">
+                <div>
+                    <label for="rute" style="margin-top:20px;"> Velg rute</label>
+                    <select class="form-control" id="rute">
+                    </select>
+
+                    <label for="avgangsDato" class="form-label" style="margin-top:20px;"> Avgangsdato </label>
+                    <input type="date" id="dato" name="dato" max="3000-12-31"
+                           min="1000-01-01" class="form-control">
+
+                    <br />
+                    <button onclick="hentSpesifikkeruter()" class="btn btn-dark" style="background-color: black; color: white;">Søk etter tilgjengelige båter</button>
+                    <br />
+                    <label for="rute" style="margin-top:10px;">Velg tur</label>
+                    <select class="form-control" id="RuterDropDown">
+                    </select>
+
+                    <div id="myDiv"></div>
+
+
+                </div>
+
+            </div>
+            
+
+        </div><br />
+
+    </div>
+    <div style="margin-top:40px;">
+
+    </div>
+    <div class="container" style="margin-top:40px;">
+        <div class="col-md-8">
+            <button onclick="validerEndreBillett()" class="btn btn-dark" style="background-color: grey; color: white; margin-top:20px;"> Endre billett</button>
+        </div>
+
+</body>
+</html>

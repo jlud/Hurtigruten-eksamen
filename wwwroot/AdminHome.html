@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--- Hjemskjerm for admin. Fungerer også som endre/leggtil/slett rute --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="js/AdminHome.js"></script>
+    <body onLoad="hentAlleRuter()">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="AdminHome.html" class="navbar-brand">Administrasjon : hjem</a>
+
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="endreKunder.html">Registrer og endre kunder</a>
+                    </li>
+                    <li>
+                        <a href="Endre_pris.html">Endre priser</a>
+                    </li>
+                    <li>
+                        <a href="endreBestilling.html">Endre bestillinger</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <button class="btn btn-dark" style=" margin-top:10px;" onclick="LoggUt()">
+                    Logg ut
+                    </button>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+
+    <div class="container">
+        <br /><br />
+        <h2>Registrer ny rute</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Fra</label>
+                <input type="text" placeholder="F.eks Oslo" class="form-control" id="frain" onchange="validerFra.value">
+                <span id="feilmeldingFra" style="color: red; font-size: 14px; font-style: italic;"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label>Til</label>
+                <input placeholder="F.eks København" type="text" class="form-control" id="tilin" onchange="validerTil.value">
+                <span id="feilmeldingTil" style="color: red; font-size: 14px; font-style: italic;"></span>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+
+            <div class="col-md-4">
+                <label>Dato</label>
+                <input class="form-control" type="date" id="datoinnn">
+                <div id="feilmeldingDato" style="color: red; font-size: 14px; font-style: italic;"></div>
+            </div>
+
+            <div class="col-md-4">
+                <label>Tidspunkt</label>
+                <input class="form-control" type="time" id="titsinn">
+                <div id="feilmeldingTid" style="color: red; font-size: 14px; font-style: italic;"></div>
+            </div>
+        </div>
+
+            <button onclick="validerNyRute()" class="btn btn-dark" style="background-color: black; color: white; margin-top:20px;">Registrer ny rute</button>
+        </div>
+        <div id="feil" style="color:red"></div>
+   
+
+    <br /> <br />
+
+    <div class="container">
+        <h2>Alle Ruter</h2>
+        <p style="font-style:italic">Nedenfor ser du en liste over alle rutene som er registrert. <br />Her kan du velge å endre eller slette en eller flere ruter.</p>
+
+        <div id="alleRuter">
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
